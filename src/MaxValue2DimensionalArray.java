@@ -14,10 +14,10 @@ public class MaxValue2DimensionalArray {
         return max;
     }
 
-    public static int[][] inputArray4x4(int[][] arr) {
+    public static int[][] inputArrayRowxCol(int[][] arr, int row, int col) {
         Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
                 System.out.print("Input interger value " + i + " " + j + ": ");
                 arr[i][j] = sc.nextInt();
             }
@@ -32,8 +32,14 @@ public class MaxValue2DimensionalArray {
 //                {2, 3, 4, 5},
 //                {6, 7, 8, 9}
 //        };
-        int[][] arr = new int[4][4];
-        arr = inputArray4x4(arr);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input Row: ");
+        int row = scanner.nextInt();
+        System.out.print("Input Col: ");
+        int col = scanner.nextInt();
+
+        int[][] arr = new int[row][col];
+        arr = inputArrayRowxCol(arr, row, col);
 
         for (int i = 0; i < arr.length; i++) {
             System.out.println("");
